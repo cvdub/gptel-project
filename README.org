@@ -1,6 +1,5 @@
 #+TITLE: gptel-project
 
-* Description
 The goal of this package is to replicate the "projects" feature of the default ChatGPT client in Emacs with [[https://github.com/karthink/gptel][gptel]]. It enables project-based context, transcripts, and summaries, leveraging Emacs' built in ~project.el~.
 
 Project based chats are automatically saved to a project sub-directory, and a project summary is created/updated from these chats. You can also define a project description which is included in the system prompt.
