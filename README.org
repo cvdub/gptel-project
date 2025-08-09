@@ -1,0 +1,18 @@
+#+TITLE: gptel-project
+
+* Description
+The goal of this package is to replicate the "projects" feature of the default ChatGPT client in Emacs with [[https://github.com/karthink/gptel][gptel]]. It enables project-based context, transcripts, and summaries, leveraging Emacs' built in ~project.el~.
+
+Project based chats are automatically saved to a project sub-directory, and a project summary is created/updated from these chats. You can also define a project description which is included in the system prompt.
+
+Autosaving of project chats and automatic updating of the project summary can be disabled by customizing ~gptel-project-autosave-chat-transcripts~ and ~gptel-project-automatically-update-summary~.
+
+* Installation
+#+begin_src elisp
+  (use-package gptel-project
+    :vc (:url "git@github.com:cvdub/gptel-project.git" :rev :newest)
+    :config (gptel-project-mode 1)
+    :bind (:map project-prefix-map
+                ("a" . #'gptel-project-chat)
+                ("u" . #'gptel-project-update-summary)))
+#+end_src
